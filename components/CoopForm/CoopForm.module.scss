@@ -1,0 +1,56 @@
+@import '../../assets/vars';
+
+.form_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: flex-start;
+    justify-content: center;
+
+    &_title {
+        font-size: 1.75em;
+        color: rgba($primary, .8);
+        line-height: 150%;
+        width: 90%;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 1.3em;
+        }
+
+        @media screen and (max-width: 900px) {
+            font-size: 1em;
+        }
+
+        @media screen and (max-width: 750px) {
+            font-size: 1.6em;
+            color: $primary;
+        }
+
+        @media screen and (max-width: 550px) {
+            font-size: 1em;
+        }
+    }
+
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &_submit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+
+            @media screen and (max-width: 900px) {
+                gap: 15px;
+            }
+
+            @media screen and (max-width: 500px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@import '../../assets/vars';
+
+.input {
+    $top: 0.625em;
+    $left: 1.025em;
+
+    position: relative;
+    width: 100%;
+
+    input {
+        padding: $top $left;
+        font-size: 1em;
+        color: $primary;
+        border: none;
+        border-bottom: 2px solid rgba($primary, .2);
+        width: 100%;
+        background: transparent;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 0.8em;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    input:focus ~ label, input:valid ~ label {
+        top: calc($top * -2);
+        font-size: 0.875em;
+        color: $primary;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 0.6em;
+        }
+      }
+
+    label {
+        color: $seccondary;
+        font-size: 1em;
+        position: absolute;
+        pointer-events: none;
+        left: $left;
+        top: $top;
+        transition: .2s ease all;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 0.8em;
+        }
+    }
+
+    .bar { 
+        position: relative; 
+        display: block; 
+        width: 100%;
+
+        &::before,
+        &::after {
+            content: '';
+            height: 2px; 
+            width: 0;
+            bottom: 1px; 
+            position: absolute;
+            background: $primary; 
+            transition: 0.2s ease all; 
+        }
+
+        &::before {
+            left: 50%;
+        }
+
+        &::after {
+            right: 50%;
+        }
+    }
+
+    input:focus ~ .bar::before, input:focus ~ .bar::after {
+        width: 50%;
+    }
+}
